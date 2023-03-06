@@ -1,0 +1,4 @@
+gebuehrentabelle:
+  preis-einzelkarte-pro-stunde: 5
+  toleranz-einzelkarte-ausfahrtzeit: PT30M
+  preis-monatskarte: 30
