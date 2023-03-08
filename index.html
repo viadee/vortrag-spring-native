@@ -116,7 +116,7 @@
 			</section>
 			<section>
 				<div>
-					<h1>Java is still here</h1>
+					<h3>Java is still here</h3>
 					<div class="multiCol">
 						<div class="col" align="center">
 							<p><b>Java seit vielen Jahren eine der verbreitesten Programmiersprachen<sup>1</sup></b></p>
@@ -131,7 +131,7 @@
 			</section>
 			<section>
 				<div>
-					<h1>Betrieb von Java</h1>
+					<h3>Betrieb von Java</h3>
 					<div class="col">
 						<ul>
 							<li>In ganz klassicher Weise auf Applikationsservern</li>
@@ -149,7 +149,7 @@
 			</section>
 			<section>
 				<div>
-					<h1>Die Cloud und ihre Anforderungen</h1>
+					<h3>Die Cloud und ihre Anforderungen</h3>
 					<div class="col">
 						<ul>
 							<li>Container und Kubernetes setzen auf Microservices</li>
@@ -160,7 +160,7 @@
 				</div>
 			</section>
 			<section>
-				<h1>Java + Cloud = Challenge?</h1>
+				<h3>Java + Cloud = Challenge?</h3>
 				<div class="col">
 					<div>
 						<ul>
@@ -242,6 +242,138 @@
 				</ul>
 			</section>
 
+			<section data-auto-animate>
+				<img data-id="spring" style="width: 25%" src="https://spring.io/img/spring-2.svg">
+			</section>
+
+			<section data-auto-animate>
+				<img data-id="spring" style="width: 25%" src="https://spring.io/img/spring-2.svg">
+				<h3 data-id="bisher">Was bisher geschah....</h3>
+			</section>
+
+			<section data-auto-animate>
+				<img data-id="spring" style="width: 25%" src="https://spring.io/img/spring-2.svg">
+				<h3 data-id="bisher">Was bisher geschah....</h3>
+				<p  data-id="text">Spring Native stand als experimentelles Feature zur Verfügung.</p>
+				<pre data-id="spring"><code class="xml hljs" data-trim data-noescap data-line-numbers>
+					<dependency>
+						<groupId>org.springframework.experimental</groupId>
+						<artifactId>spring-native</artifactId>
+						<version>0.12.0</version>
+					</dependency>
+				</code></pre>
+			</section>
+
+			<section data-auto-animate>
+				<img data-id="spring" style="width: 25%" src="https://spring.io/img/spring-2.svg">
+				<h3 data-id="bisher">Was bisher geschah....</h3>
+				<p data-id="text">Die Konfiguration von Spring Native war dementsprechend aufwendig.</p>
+				<pre data-id="spring"><code class="xml hljs" data-trim data-noescap data-line-numbers>
+					<script type="text/template">
+				<build>
+					<plugins>
+						<plugin>
+							<groupId>org.springframework.boot</groupId>
+							<artifactId>spring-boot-maven-plugin</artifactId>
+							<configuration>
+								<image>
+									<builder>paketobuildpacks/builder:tiny</builder>
+									<env>
+										<BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
+									</env>
+								</image>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.springframework.experimental</groupId>
+							<artifactId>spring-aot-maven-plugin</artifactId>
+							<version>0.12.0</version>
+							<executions>
+								<execution>
+									<id>generate</id>
+									<goals>
+										<goal>generate</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+					</plugins>
+				</build>
+
+	<profiles>
+		<profile>
+			<id>native</id>
+			<dependencies>
+				<dependency>
+					<groupId>org.junit.platform</groupId>
+					<artifactId>junit-platform-launcher</artifactId>
+					<scope>test</scope>
+				</dependency>
+			</dependencies>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.graalvm.buildtools</groupId>
+						<artifactId>native-maven-plugin</artifactId>
+						<version>0.9.12</version>
+						<extensions>true</extensions>
+						<executions>
+							<execution>
+								<id>build-native</id>
+								<goals>
+									<goal>build</goal>
+								</goals>
+								<phase>package</phase>
+							</execution>
+						</executions>
+						<configuration>
+							<buildArgs>-J-Xmx4G -H:+ReportExceptionStackTraces</buildArgs>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+						<configuration>
+							<classifier>exec</classifier>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+					</script>
+</code></pre>
+				<p style="font-size: small">Vgl.: <a href="https://github.com/viadee/spring-native-demo" class="fa fa-github"> https://github.com/viadee/spring-native-demo</a></p>
+			</section>
+
+			<section data-auto-animate>
+				<img data-id="spring" style="width: 25%" src="https://spring.io/img/spring-2.svg">
+				<h3 data-id="bisher">Was bisher geschah...</h3>
+				<p  data-id="text">Regelmäßige Änderungen und ein aufwendiges Setup waren für produktiven Einsatz quasi nicht benutzbar.</p>
+			</section>
+
+
+			<section data-auto-animate>
+				<img data-id="spring" style="width: 25%" src="https://spring.io/img/spring-2.svg">
+				<h3 data-id="bisher">November 2022: <br> Release Spring 6 und Spring Boot 3</h3>
+			</section>
+
+
+			<section data-background-iframe="https://spring.io/blog/2022/11/24/spring-boot-3-0-goes-ga">
+			</section>
+
+			<section>
+				<h3>Spring Boot 3: Native Image Support</h3>
+				<ul>
+					<li>Offizielle Unterstützung von nativen Images</li>
+					<li>Integrierter Buildprozess</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Demo</h2>
+				<img src="assets/videokamera.png" style="width: 15%"/>
+			</section>
 
 			<section>
 				<h1>Performance</h1>
@@ -270,62 +402,18 @@
 				<p>// Arbeitsspeicher</p>
 			</section>
 
-			<section data-auto-animate>
-				<h3 data-id="bisher">Was bisher geschah....</h3>
+			<section>
+				<h3>Buildprozess</h3>
+				<ul>
+					<li>Standard-Buildprozess ist komplett integriert
+						<ul>
+							<li>Maven (und Gradle) Goals verfügbar</li>
+							<li>Native Images können direkt in Docker Containern gebaut werden</li>
+						</ul>
+					</li>
+
+				</ul>
 			</section>
-
-			<section data-auto-animate>
-				<h3 data-id="bisher">Was bisher geschah....</h3>
-				<p  data-id="text">Spring Native stand als experimentielles Feature zur Verfügung.</p>
-				<pre data-id="spring"><code class="xml hljs" data-trim data-noescap data-line-numbers>
-					<dependency>
-						<groupId>org.springframework.experimental</groupId>
-						<artifactId>spring-native</artifactId>
-						<version>${spring.native.version}</version>
-					</dependency>
-				</code></pre>
-			</section>
-
-			<section data-auto-animate>
-				<h3 data-id="bisher">Was bisher geschah....</h3>
-				<p data-id="text">Die Konfiguration von Spring Native war dementsprechend aufwendig.</p>
-				<pre data-id="spring"><code class="xml hljs" data-trim data-noescap data-line-numbers>
-					<script type="text/template">
-				<build>
-					<plugins>
-						<plugin>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-maven-plugin</artifactId>
-							<configuration>
-								<image>
-									<builder>paketobuildpacks/builder:tiny</builder>
-									<env>
-										<BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
-									</env>
-								</image>
-							</configuration>
-						</plugin>
-						<plugin>
-							<groupId>org.springframework.experimental</groupId>
-							<artifactId>spring-aot-maven-plugin</artifactId>
-							<version>${spring.native.version}</version>
-							<executions>
-								<execution>
-									<id>generate</id>
-									<goals>
-										<goal>generate</goal>
-									</goals>
-								</execution>
-							</executions>
-						</plugin>
-					</plugins>
-				</build>
-					</script>
-</code></pre>
-				<p style="font-size: small">Vgl.: <a href="https://github.com/viadee/spring-native-demo" class="fa fa-github"> https://github.com/viadee/spring-native-demo</a></p>
-			</section>
-
-
 
 
 		</section>
