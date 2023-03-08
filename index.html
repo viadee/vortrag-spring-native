@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="dist/reveal.css">
 	<link rel="stylesheet" href="dist/theme/viadee-red-orange.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="plugin/highlight/agate.css" id="highlight-theme">
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -165,7 +165,6 @@
 					</div>
 
 					<div class="col">
-						<p>Ahead of Time (AOT) Compilation: </p>
 						<ul>
 							<li>Extrem schnelle Startzeiten</li>
 							<li>Minimaler Speicherverbrauch</li>
@@ -175,6 +174,28 @@
 				</div>
 
 			</section>
+
+
+			<section>
+				<h3>Ahead of Time Compilation (AOT)</h3>
+				<ul>
+					<li>Der Klassenpfad ist zum Zeitpunkt des Bauens fest definiert
+					</li>
+					<li>Die Anwendung kann zur Laufzeit nicht mehr verändert werden</li>
+				</ul>
+
+
+			</section>
+
+			<section>
+				<h3>AOT generiert:</h3>
+				<ul>
+					<li>Java Source Code</li>
+					<li>Bytecode</li>
+					<li>GraalVM JSON Dateien, zur Laufzeitkonfiguration</li>
+				</ul>
+			</section>
+
 
 			<section>
 				<h1>Performance</h1>
@@ -203,9 +224,64 @@
 				<p>// Arbeitsspeicher</p>
 			</section>
 
-			<section>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Spring_Framework_Logo_2018.svg">
+			<section data-auto-animate>
+				<h3 data-id="bisher">Was bisher geschah....</h3>
 			</section>
+
+			<section data-auto-animate>
+				<h3 data-id="bisher">Was bisher geschah....</h3>
+				<p  data-id="text">Spring Native stand als experimentielles Feature zur Verfügung.</p>
+				<pre data-id="spring"><code class="xml hljs" data-trim data-noescap data-line-numbers>
+					<dependency>
+						<groupId>org.springframework.experimental</groupId>
+						<artifactId>spring-native</artifactId>
+						<version>${spring.native.version}</version>
+					</dependency>
+				</code></pre>
+			</section>
+
+			<section data-auto-animate>
+				<h3 data-id="bisher">Was bisher geschah....</h3>
+				<p data-id="text">Die Konfiguration von Spring Native war dementsprechend aufwendig.</p>
+				<pre data-id="spring"><code class="xml hljs" data-trim data-noescap data-line-numbers>
+					<script type="text/template">
+				<build>
+					<plugins>
+						<plugin>
+							<groupId>org.springframework.boot</groupId>
+							<artifactId>spring-boot-maven-plugin</artifactId>
+							<configuration>
+								<image>
+									<builder>paketobuildpacks/builder:tiny</builder>
+									<env>
+										<BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
+									</env>
+								</image>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.springframework.experimental</groupId>
+							<artifactId>spring-aot-maven-plugin</artifactId>
+							<version>${spring.native.version}</version>
+							<executions>
+								<execution>
+									<id>generate</id>
+									<goals>
+										<goal>generate</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+					</plugins>
+				</build>
+					</script>
+</code></pre>
+				<p style="font-size: small">Vgl.: <a href="https://github.com/viadee/spring-native-demo" class="fa fa-github"> https://github.com/viadee/spring-native-demo</a></p>
+			</section>
+
+
+
+
 		</section>
 
 
