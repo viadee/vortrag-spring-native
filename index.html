@@ -129,21 +129,23 @@
 					</div>
 				</div>
 			</section>
-			<section>
+			<section data-auto-animate>
 				<div>
-					<h3>Betrieb von Java</h3>
+					<h3>Java im Betrieb</h3>
 					<div class="col">
 						<ul>
-							<li>In ganz klassicher Weise auf Applikationsservern</li>
-							<li>Spring Boot bündelt Deploymentartefakte + Applikationsserver</li>
+							<li data-id="app-server">In ganz klassicher Weise auf Applikationsservern</li>
+							<li data-id="spring-boot">Spring Boot bündelt Deploymentartefakte + Applikationsserver</li>
 							<br>
 						</ul>
-						<h4>Aber ...</h4>
+						<div>
+						<h4 data-id="aber">Aber ...</h4>
 						<ul>
-							<li>... Anwendungen können monolithisch werden</li>
-							<li>... das Monitoring und die Skalierung kann aufwendig sein</li>
+							<li data-id="monolith">... Anwendungen können monolithisch werden</li>
+							<li data-id="skalierung">... das Monitoring und die Skalierung kann aufwendig sein</li>
 							<br>
 						</ul>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -165,7 +167,7 @@
 					<div>
 						<ul>
 							<li>Java wird klassischerweise Just-in-Time (JIT) kompiliert</li>
-							<li>Speicherverbrauch ist in der Regel höher als bei Skriptsprachen (Typescript) oder Cloud-optimierten Sprachen (Go)</li>
+							<li>Speicherverbrauch ist in der Regel höher als bei Skriptsprachen wie Typescript</li>
 							<li>Features wie Reflection erhöhen die Startup-Time</li>
 						</ul>
 						<h2></h2>
@@ -184,10 +186,50 @@
 					<h1>Wege in die Cloud</h1>
 				</div>
 			</section>
+				<section>
+					<h3>Microservice-Standards für Java</h3>
+					<div class="multiCol">
+						<div class="col" align="center">
+							<img src="assets/microprofile.png" width="700"/>
+						</div>
+						<div class="col" align="center">
+							<img src="assets/twelve-factor-app.png" width="700"/>
+						</div>
+					</div>
 
-			<section>
-
-			</section>
+				</section>
+				<section>
+					<h3>Container First Frameworks</h3>
+					<div class="multiCol">
+						<div class="col center" align="center">
+							<p><b>Quarkus</b></p>
+							<img src="assets/quarkus.png" width="200"/>
+						</div>
+						<div class="col center" align="center">
+							<img src="assets/micronaut.png" width="200"/>
+							<p><b>Micronaut</b></p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h3>Spring, aber eben noch kleiner...</h3>
+					<div>
+						<ul>
+							<li>FaaS-Ansatz</li>
+							<li>Spring Cloud Functions</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h3>Coordinated Restore at Checkpoint (CRaC)</h3>
+					<div>
+						<ul>
+							<li>Mechanismus um einen Snapshot seiner laufenden Java-Anwendung zu erzeugen</li>
+							<li>Durch Wiederherstellung des Snapshots soll die Start-Up-Time eingespart werden</li>
+							<li>Befindet sich im frühen experimentellen Stadium</li>
+						</ul>
+					</div>
+				</section>
 		</section>
 
 		<section>
