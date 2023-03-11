@@ -128,7 +128,7 @@
 							<div class="col" align="center">
 								<p><b>Java seit vielen Jahren eine der verbreitesten Programmiersprachen<sup>1</sup></b>
 								</p>
-								<img src="assets/tiboe-index.jpg" width="100" />
+								<img src="assets/tiobe-index.png" width="400" />
 							</div>
 							<div class="col" align="center">
 								<img src="assets/spring.png" width="200" />
@@ -242,10 +242,10 @@
 				<section>
 					<h3>Microservice-Standards für Java</h3>
 					<div class="multiCol">
-						<div class="col" align="center">
+						<div class="col">
 							<img src="assets/microprofile.png" width="700" />
 						</div>
-						<div class="col" align="center">
+						<div class="col">
 							<img src="assets/twelve-factor-app.png" width="700" />
 						</div>
 					</div>
@@ -265,13 +265,16 @@
 					</div>
 				</section>
 				<section>
-					<h3>Spring, aber eben noch kleiner...</h3>
-					<div>
-						<ul>
-							<li>Function-as-a-Service-Ansatz</li>
-							<li>Spring Cloud Functions</li>
-						</ul>
-					</div>
+					<h3>Spring Cloud</h3>
+						<div class="col center" align="center">
+							<img src="assets/spring-cloud.png" width="150" />
+						</div>
+						<div class="col center">
+							<ul>
+								<li>Spring Sub-Projekt für den Cloud-Betrieb</li>
+								<li>Features wie Function-as-a-Service (FaaS)</li>
+							</ul>
+						</div>
 				</section>
 				<section>
 					<h3>Coordinated Restore at Checkpoint (CRaC)</h3>
@@ -279,6 +282,7 @@
 						<ul>
 							<li>Mechanismus um einen Snapshot seiner laufenden Java-Anwendung zu erzeugen</li>
 							<li>Durch Wiederherstellung des Snapshots soll die Start-Up-Time eingespart werden</li>
+							<li>Unterstützung für Spring Boot, Quarkus und Micronaut</li>
 							<li>Befindet sich im frühen experimentellen Stadium</li>
 						</ul>
 					</div>
@@ -287,8 +291,9 @@
 					<h3>Was macht diese Lösungen unattraktiv?</h3>
 					<div>
 						<ul>
-							<li>Framework-Migration</li>
+							<li>Framework-Migration bei vorhandenen Systemen</li>
 							<li>Umbau der Anwendung notwendig</li>
+							<li>Möglicher Vendor Lock-In</li>
 							<li>Nicht ausgereift genug</li>
 						</ul>
 					</div>
