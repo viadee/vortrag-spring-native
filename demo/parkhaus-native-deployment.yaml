@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        app: parkhaus-jvm-demo
+        app: parkhaus-native-demo
         viadee.de/experiment: spring-native
     spec:
       containers:
