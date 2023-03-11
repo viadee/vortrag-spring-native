@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: parkhaus-demo
+  labels:
+    field.cattle.io/projectId: p-mbvvh
+  annotations:
+    field.cattle.io/projectId: c-n4s6t:p-mbvvh
