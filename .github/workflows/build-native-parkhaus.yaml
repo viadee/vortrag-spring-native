@@ -25,6 +25,6 @@ jobs:
         native-image-job-reports: 'true'
     
     - name: Build
-      run: mvn -Pnative -Dspring-boot.build-image.imageName=europe-west3-docker.pkg.dev/viadee-clusters/docker-dev/fue-cloud/parkhaus:jvm spring-boot:build-image
+      run: mvn -Pnative -Dspring-boot.build-image.imageName=europe-west3-docker.pkg.dev/viadee-clusters/docker-dev/fue-cloud/parkhaus:native spring-boot:build-image
 
     
