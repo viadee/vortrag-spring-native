@@ -1,0 +1,30 @@
+name: Build native parkhaus
+
+on:
+  push:
+    branches:
+      - demo
+  workflow_dispatch: 
+
+jobs:
+  build:
+    name: Build Native
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    - name: Set up GraalVM
+      uses: graalvm/setup-graalvm@v1
+      with:
+        version: '22.3.0'
+        java-version: '17'
+        components: 'native-image'
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        native-image-job-reports: 'true'
+    
+    - name: Build
+      run: mvn -Pnative -Dspring-boot.build-image.imageName=europe-west3-docker.pkg.dev/viadee-clusters/docker-dev/fue-cloud/parkhaus:jvm spring-boot:build-image
+
+    

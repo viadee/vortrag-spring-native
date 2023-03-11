@@ -1,0 +1,27 @@
+name: Build jvm parkhaus
+
+on:
+  push:
+    branches:
+      - demo
+  workflow_dispatch: 
+
+jobs:
+  build:
+    name: Build JVM
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    - uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+        cache: 'maven'  
+    
+    - name: Build
+      run: mvn -Dspring-boot.build-image.imageName=europe-west3-docker.pkg.dev/viadee-clusters/docker-dev/fue-cloud/parkhaus:jvm spring-boot:build-image
+
+    
