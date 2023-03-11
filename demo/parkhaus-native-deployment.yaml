@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parkhaus-native-demo
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: parkhaus-native-demo
+  template:
+    metadata:
+      labels:
+        app: parkhaus-jvm-demo
+        viadee.de/experiment: spring-native
+    spec:
+      containers:
+        - image: europe-west3-docker.pkg.dev/viadee-clusters/docker-dev/fue-cloud/parkhaus:native
+          name: parkhaus-native-demo
+          ports:
+            - containerPort: 8080
