@@ -484,35 +484,30 @@
 				</section>
 
 				<section>
-					<h2>Demo</h2>
+					<h3>Demo</h3>
 					<img src="assets/videokamera.png" style="width: 15%" />
 				</section>
 
 				<section>
-					<h1>Performance</h1>
-					<p>// TODO</p>
-					<canvas data-chart="bar">
-						<!--
-                    {
-                     "data": {
-                      "labels": ["JVM","Native Image"],
-                      "datasets": [
-                       {
-                        "data":[1.8,0.36],
-                        "label":"Parkhaus Anwendung","backgroundColor":"#681885"
-                       }
-                      ]
-                     },
-                     "options": { "responsive": "true" }
-                    }
-                    -->
-					</canvas>
-					<p style="font-size: smaller">Startzeit in Sekunden</p>
+					<h3>Performance</h3>
+					<h4>Startzeiten</h4>
+					<p>JVM</p>
+					<pre data-id="spring"><code class="text hljs" data-trim data-noescap data-line-numbers>
+						<script type="text/template">
+						Started ParkhausApplication in 5.711 seconds
+					</script></code></pre>
+
+					<p>Native Image</p>
+					<pre data-id="spring"><code class="text hljs" data-trim data-noescap data-line-numbers>
+						<script type="text/template">
+						Started ParkhausApplication in 0.229 seconds
+					</script></code></pre>
+
 				</section>
 
 				<section>
 					<h1>Performance</h1>
-					<p>// Arbeitsspeicher</p>
+				<img src="assets/memory.png">
 				</section>
 
 				<section>
@@ -524,10 +519,63 @@
 								<li>Native Images können direkt in Docker Containern gebaut werden</li>
 							</ul>
 						</li>
-
 					</ul>
 				</section>
 
+
+				<section data-auto-animate>
+					<h3 data-id="limit">Einschränkungen</h3>
+					<p>Native Images unterscheiden sich fundamental von der gewohnten JVM-Laufzeitumgebung. </p>
+				</section>
+
+				<section data-auto-animate>
+					<h3 data-id="limit">Einschränkungen</h3>
+					<h4 style="color: black">Buildprozess</h4>
+					<ul>
+						<li>Der Buildprozess verlängert sich signifikant.</li>
+						<img src="assets/build.png">
+					</ul>
+
+					<div class="multiCol">
+						<div class="col">
+							<p style="font-size:50px">&#128161;</p>
+						</div>
+						<div class="col">
+							<ul>
+								<li>Buildpacks zur Optimierung des Prozesses </li>
+								<li>Organisatorische Maßnahmen: So viel wie möglich vor dem Kompilieren machen, wie möglich</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+
+				<section data-auto-animate>
+					<h3 data-id="limit">Einschränkungen</h3>
+					<h4 style="color: black">Nicht unterstützte Spring-Features</h4>
+					<ul>
+						<li>Profiles</li>
+						<li>Veränderbare Properties werden nicht unterstützt (z.B. @ConditionalOnProperty)</li>
+					</ul>
+				</section>
+
+				<section data-auto-animate>
+					<h3 data-id="limit">Einschränkungen</h3>
+					<h4 style="color: black">Third Party Libraries</h4>
+					<ul>
+						<li>Bibliotheken werden möglicherweise nicht unterstützt</li>
+						<li>Laufende Aktualisierung der <a href="https://www.graalvm.org/native-image/libraries-and-frameworks/">unterstützen Bibliotheken </a></li>
+					</ul>
+				</section>
+
+				<section data-auto-animate>
+					<h3 data-id="limit">Lösungsansätze</h3>
+					<ul>
+						<li>Testmöglichkeiten für AOT-Kompilierung</li>
+						<li>Konfigurationsdateien für native Images können mittels Tracing Agent generiert werden</li>
+						<li>... native Images stehen erst am Anfang</li>
+					</ul>
+				</section>
 
 			</section>
 
