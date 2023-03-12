@@ -468,7 +468,8 @@
 
 				<section data-auto-animate>
 					<img data-id="spring" style="width: 25%" src="https://spring.io/img/spring-2.svg">
-					<h3 data-id="bisher">November 2022: <br> Release Spring 6 und Spring Boot 3</h3>
+					<h3 data-id="bisher">November 2022:</h3>
+					<h3> Release Spring 6 und Spring Boot 3</h3>
 				</section>
 
 
@@ -476,7 +477,7 @@
 				</section>
 
 				<section>
-					<h3>Spring Boot 3: Native Image Support</h3>
+					<h3>Spring Boot 3</h3>
 					<ul>
 						<li>Offizielle Unterstützung von nativen Images</li>
 						<li>Integrierter Buildprozess</li>
@@ -516,7 +517,7 @@
 						<li>Standard-Buildprozess ist komplett integriert
 							<ul>
 								<li>Maven (und Gradle) Goals verfügbar</li>
-								<li>Native Images können direkt in Docker Containern gebaut werden</li>
+								<li>Native Images können direkt in Docker-Containern gebaut werden</li>
 							</ul>
 						</li>
 					</ul>
@@ -537,13 +538,13 @@
 					</ul>
 
 					<div class="multiCol">
-						<div class="col">
+						<div class="col" align="center" style="width: 15%">
 							<p style="font-size:50px">&#128161;</p>
 						</div>
-						<div class="col">
+						<div class="col" align="left">
 							<ul>
 								<li>Buildpacks zur Optimierung des Prozesses </li>
-								<li>Organisatorische Maßnahmen: So viel wie möglich vor dem Kompilieren machen, wie möglich</li>
+								<li>Organisatorische Entzerrung Entwicklungsprozess</li>
 							</ul>
 						</div>
 					</div>
@@ -557,6 +558,16 @@
 						<li>Profiles</li>
 						<li>Veränderbare Properties werden nicht unterstützt (z.B. @ConditionalOnProperty)</li>
 					</ul>
+					<div class="multiCol" style="margin-top: 5%">
+						<div class="col" align="center" style="width: 15%">
+							<p style="font-size:50px">&#128161;</p>
+						</div>
+						<div class="col" align="left">
+							<ul>
+								<li>Im Detail zu prüfen (Profiles können bspw. zum Build-Zeitpunkt festgelegt werden)</li>
+							</ul>
+						</div>
+					</div>
 				</section>
 
 				<section data-auto-animate>
@@ -564,23 +575,45 @@
 					<h4 style="color: black">Third Party Libraries</h4>
 					<ul>
 						<li>Bibliotheken werden möglicherweise nicht unterstützt</li>
-						<li>Laufende Aktualisierung der <a href="https://www.graalvm.org/native-image/libraries-and-frameworks/">unterstützen Bibliotheken </a></li>
-					</ul>
-				</section>
-
-				<section data-auto-animate>
-					<h3 data-id="limit">Lösungsansätze</h3>
-					<ul>
-						<li>Testmöglichkeiten für AOT-Kompilierung</li>
-						<li>Konfigurationsdateien für native Images können mittels Tracing Agent generiert werden</li>
-						<li>... native Images stehen erst am Anfang</li>
-					</ul>
+						</ul>
+					<div class="multiCol" style="margin-top: 5%">
+						<div class="col" align="center" style="width: 15%">
+							<p style="font-size:50px">&#128161;</p>
+						</div>
+						<div class="col" align="left">
+							<ul>
+								<li>Tracing Agent ermittelt alle zu konfigurierenden Klassen</li>
+								<li>Laufende Aktualisierung der <a href="https://www.graalvm.org/native-image/libraries-and-frameworks/">unterstützen Bibliotheken </a></li>
+								<li>Community entwickelt sich laufend</li>
+							</ul>
+						</div>
+					</div>
 				</section>
 
 			</section>
 
-
 			<section>
+
+				<section data-background-image="assets/stairway.jpeg">
+					<div
+							style="position: absolute; width: 100%; right: 0; margin-top: 50%; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5), 0 5px 25px rgba(0, 0, 0, 0.2); background-color: rgba(255, 255, 255, 0.8); color: #8f8f8f; padding: 15px; font-size: 20px; text-align: center">
+						<h1>Fazit</h1>
+						<h3>Spring Native: Ein Java-Weg in die Cloud</h3>
+						<p>
+							<small><a href="mailto:pia.diedam@viadee.de">Pia Diedam</a> <a
+									href="https://twitter.com/piadiedam" class="fa fa-twitter"></a> <a
+									href="https://www.linkedin.com/in/pia-diedam/" class="fa fa-linkedin"></a></small>
+							<br />
+							<small><a href="mailto:matthias.kutz@viadee.de">Matthias Kutz</a> <a
+									href="https://twitter.com/matthias_kutz" class="fa fa-twitter"></a> <a
+									href="https://www.linkedin.com/in/matthias-kutz/" class="fa fa-linkedin"></a></small>
+							<br />
+							<a href="https://github.com/viadee/vortrag-spring-native" class="fa fa-github"
+							   style="color: dimgrey"></a>
+						</p>
+					</div>
+				</section>
+
 				<section>
 					<h1>Quellen</h1>
 					<div>
