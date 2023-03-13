@@ -76,13 +76,13 @@
                 <h1>Spring Native</h1>
                 <h3>Ein Java-Weg in die Cloud</h3>
                 <p>
-                    <small><a href="mailto:pia.diedam@viadee.de">Pia Diedam</a> <a
-                            href="https://twitter.com/piadiedam" class="fa fa-twitter"></a> <a
-                            href="https://www.linkedin.com/in/pia-diedam-b23ab21a2" class="fa fa-linkedin"></a></small>
+                    <small><a href="mailto:pia.diedam@viadee.de" style="color: black">Pia Diedam</a> <a
+                            href="https://twitter.com/piadiedam" class="fa fa-twitter"  style="color: dimgrey"></a> <a
+                            href="https://www.linkedin.com/in/pia-diedam-b23ab21a2" class="fa fa-linkedin"  style="color: dimgrey"></a></small>
                     <br/>
-                    <small><a href="mailto:matthias.kutz@viadee.de">Matthias Kutz</a> <a
-                            href="https://twitter.com/matthias_kutz" class="fa fa-twitter"></a> <a
-                            href="https://www.linkedin.com/in/matthias-kutz/" class="fa fa-linkedin"></a></small>
+                    <small style="color: black"><a href="mailto:matthias.kutz@viadee.de"  style="color: black">Matthias Kutz</a> <a
+                            href="https://twitter.com/matthias_kutz" class="fa fa-twitter"  style="color: dimgrey"></a> <a
+                            href="https://www.linkedin.com/in/matthias-kutz/" class="fa fa-linkedin"  style="color: dimgrey"></a></small>
                     <br/>
                     <a href="https://github.com/viadee/vortrag-spring-native" class="fa fa-github"
                        style="color: dimgrey"></a>
@@ -121,7 +121,7 @@
                     <h3>Java is still here</h3>
                     <div class="multiCol">
                         <div class="col" align="center">
-                            <p><b>Java seit vielen Jahren eine der verbreitesten Programmiersprachen<sup>1</sup></b>
+                            <p><b>Java ist seit vielen Jahren eine der verbreitesten Programmiersprachen<sup>1</sup></b>
                             </p>
                             <img src="assets/tiobe-index.png" width="400"/>
                         </div>
@@ -139,7 +139,7 @@
                     <div class="col">
                         <ul>
                             <li data-id="app-server">In ganz klassicher Weise auf Applikationsservern</li>
-                            <li data-id="spring-boot">Spring Boot bündelt Deploymentartefakte + Applikationsserver
+                            <li data-id="spring-boot">Spring Boot bündelt Deployment-Artefakte + Applikationsserver
                             </li>
                             <br>
                         </ul>
@@ -202,7 +202,7 @@
                     <div class="col">
                         <ul>
                             <li>Container und Kubernetes setzen auf Microservices</li>
-                            <li>Anwendungen müssen effizient mit Neustarts umgehen</li>
+                            <li>Anwendungen sollten effizient mit Neustarts umgehen</li>
                             <li>Ressourcen werden je nach Verbrauch abgerechnet</li>
                         </ul>
                     </div>
@@ -214,7 +214,7 @@
                     <div>
                         <ul>
                             <li>Java wird klassischerweise Just-in-Time (JIT) kompiliert</li>
-                            <li>Vergleichsweise hoher Speicherverbrauch</li>
+                            <li>Vergleichsweise hoher Speicherverbrauch zur Laufzeit</li>
                             <li>Bestimmte Features, wie beispielsweise Reflections, erhöhen die Startup-Time</li>
                         </ul>
                         <h2></h2>
@@ -276,7 +276,7 @@
                 <h3>Coordinated Restore at Checkpoint (CRaC)</h3>
                 <div>
                     <ul>
-                        <li>Mechanismus um einen Snapshot seiner laufenden Java-Anwendung zu erzeugen</li>
+                        <li>Mechanismus, um einen Snapshot seiner laufenden Java-Anwendung zu erzeugen</li>
                         <li>Durch Wiederherstellung des Snapshots soll die Start-Up-Time eingespart werden</li>
                         <li>Unterstützung für Spring Boot, Quarkus und Micronaut</li>
                         <li>Befindet sich im frühen experimentellen Stadium</li>
@@ -325,7 +325,7 @@
 
 
             <section>
-                <h3>Ahead of Time Compilation (AOT)</h3>
+                <h3>Ahead of Time (AOT) Compilation</h3>
                 <ul>
                     <li>Der Classpath ist zum Zeitpunkt des Bauens fest definiert
                     </li>
@@ -450,7 +450,7 @@
                     https://github.com/viadee/spring-native-demo</a></p>
             </section>
 
-            <section data-auto-animate>
+            <section>
                 <img data-id="spring" style="width: 25%" src="https://spring.io/img/spring-2.svg">
                 <h3 data-id="bisher">Was bisher geschah...</h3>
                 <p data-id="text">Regelmäßige Änderungen und ein aufwendiges Setup waren für produktiven Einsatz
@@ -471,7 +471,7 @@
             <section>
                 <h3>Spring Boot 3</h3>
                 <ul>
-                    <li>Offizielle Unterstützung von nativen Images</li>
+                    <li>Offizielle Unterstützung nativer Images</li>
                     <li>Integrierter Buildprozess</li>
                 </ul>
             </section>
@@ -482,7 +482,7 @@
             </section>
 
             <section>
-                <h3>Performance</h3>
+                <h3>Vorteile</h3>
                 <h4>Startzeiten</h4>
                 <p>JVM</p>
                 <pre data-id="spring"><code class="text hljs" data-trim data-noescap data-line-numbers>
@@ -499,9 +499,15 @@
             </section>
 
             <section>
-                <h1>Performance</h1>
+                <h1>Vorteile</h1>
+				<h4>Arbeitsspeicher</h4>
                 <img src="assets/memory.png">
             </section>
+
+			<section>
+				<h1>Vorteile</h1>
+				<img src="assets/memory.png">
+			</section>
 
             <section>
                 <h3>Buildprozess</h3>
@@ -532,7 +538,7 @@
                     <div class="col" align="left">
                         <ul>
                             <li>Buildpacks zur Optimierung des Prozesses</li>
-                            <li>Organisatorische Entzerrung Entwicklungsprozess</li>
+                            <li>Organisatorische Entzerrung des Entwicklungsprozesses</li>
                         </ul>
                     </div>
                 </div>
