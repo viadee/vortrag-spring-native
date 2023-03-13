@@ -127,7 +127,7 @@
                         </div>
                         <div class="col" align="center">
                             <img src="assets/spring.png" width="200"/>
-                            <p><b>Spring hat sich über die letzten Jahrzehnte zum de-facto-Standard für die
+                            <p><b>Spring hat sich über die letzten Jahrzehnte als de-facto-Standard für die
                                 Enterprise-Entwicklung etabliert</b></p>
                         </div>
                     </div>
@@ -213,9 +213,9 @@
                 <div class="col">
                     <div>
                         <ul>
-                            <li>Java wird klassischerweise Just-in-Time (JIT) kompiliert</li>
+                            <li>Relevante Teile der Kompilierung geschehen erst zur Laufzeit: Just in Time (JIT)</li>
                             <li>Vergleichsweise hoher Speicherverbrauch zur Laufzeit</li>
-                            <li>Bestimmte Features, wie beispielsweise Reflections, erhöhen die Startup-Time</li>
+                            <li>Bestimmte Features, wie beispielsweise Reflection, erhöhen die Startup-Time</li>
                         </ul>
                         <h2></h2>
                     </div>
@@ -289,7 +289,7 @@
                     <ul>
                         <li>Framework-Migration bei vorhandenen Systemen</li>
                         <li>Umbau der Anwendung notwendig</li>
-                        <li>Möglicher Vendor Lock-In</li>
+                        <li>Möglicher Vendor-Lock-In</li>
                         <li>Nicht ausgereift genug</li>
                     </ul>
                 </div>
@@ -330,32 +330,28 @@
                     <li>Der Classpath ist zum Zeitpunkt des Bauens fest definiert
                     </li>
                     <li>Die Anwendung kann zur Laufzeit nicht mehr verändert werden</li>
+                    <li>Generierung von:
+                        <ul>
+                            <li>Java Source Code</li>
+                            <li>Bytecode</li>
+                            <li>GraalVM JSON Dateien, zur Laufzeitkonfiguration</li>
+                        </ul></li>
                 </ul>
 
 
+
+
             </section>
 
-            <section>
-                <h3>AOT generiert:</h3>
-                <ul>
-                    <li>Java Source Code</li>
-                    <li>Bytecode</li>
-                    <li>GraalVM JSON Dateien, zur Laufzeitkonfiguration</li>
-                </ul>
+
+            <section data-auto-animate>
+                <img data-id="spring" style="width: 25%" src="https://spring.io/img/spring-2.svg">
+                <h3 data-id="bisher">Was bisher geschah...</h3>
             </section>
 
             <section data-auto-animate>
                 <img data-id="spring" style="width: 25%" src="https://spring.io/img/spring-2.svg">
-            </section>
-
-            <section data-auto-animate>
-                <img data-id="spring" style="width: 25%" src="https://spring.io/img/spring-2.svg">
-                <h3 data-id="bisher">Was bisher geschah....</h3>
-            </section>
-
-            <section data-auto-animate>
-                <img data-id="spring" style="width: 25%" src="https://spring.io/img/spring-2.svg">
-                <h3 data-id="bisher">Was bisher geschah....</h3>
+                <h3 data-id="bisher">Was bisher geschah...</h3>
                 <p data-id="text">Spring Native stand als experimentelles Feature zur Verfügung.</p>
                 <pre data-id="spring"><code class="xml hljs" data-trim data-noescap data-line-numbers>
 					<dependency>
@@ -368,7 +364,7 @@
 
             <section data-auto-animate>
                 <img data-id="spring" style="width: 25%" src="https://spring.io/img/spring-2.svg">
-                <h3 data-id="bisher">Was bisher geschah....</h3>
+                <h3 data-id="bisher">Was bisher geschah...</h3>
                 <p data-id="text">Die Konfiguration von Spring Native war dementsprechend aufwendig.</p>
                 <pre data-id="spring"><code class="xml hljs" data-trim data-noescap data-line-numbers>
 					<script type="text/template">
@@ -472,7 +468,7 @@
                 <h3>Spring Boot 3</h3>
                 <ul>
                     <li>Offizielle Unterstützung nativer Images</li>
-                    <li>Integrierter Buildprozess</li>
+                    <li>Integrierter Build-Prozess</li>
                 </ul>
             </section>
 
@@ -506,11 +502,12 @@
 
 			<section>
 				<h1>Vorteile</h1>
-				<img src="assets/memory.png">
+				<h4>Imagegröße</h4>
+                <p>todo</p>
 			</section>
 
             <section>
-                <h3>Buildprozess</h3>
+                <h3>Build-Prozess</h3>
                 <ul>
                             <li>Maven (und Gradle) Goals verfügbar</li>
                             <li>Native Images können direkt in Docker-Containern gebaut werden</li>
@@ -525,9 +522,9 @@
 
             <section data-auto-animate>
                 <h3 data-id="limit">Einschränkungen</h3>
-                <h4 style="color: black">Buildprozess</h4>
+                <h4 style="color: black">Build-Prozess</h4>
                 <ul>
-                    <li>Der Buildprozess verlängert sich signifikant.</li>
+                    <li>Der Build-Prozess verlängert sich signifikant.</li>
                     <img src="assets/build.png">
                 </ul>
 
